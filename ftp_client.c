@@ -158,9 +158,10 @@ int ftp_get_reply(int sock_fd)
 		if(count <= 0)
 			break;
 		rcv_buf[count]='\0';
-		printf("%s",rcv_buf);
+        printf("count = %d, %s", count, rcv_buf);
 		count=read(sock_fd, rcv_buf, 510);
 	}
+
 	return reply_code;
 }
 
